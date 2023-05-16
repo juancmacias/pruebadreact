@@ -2,7 +2,7 @@
   "name": "direcotrios-varios",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "https://juancmacias.github.io/pruebadreact/",
   "dependencies": {
     "@react-oauth/google": "^0.11.0",
     "@testing-library/jest-dom": "^5.16.5",
