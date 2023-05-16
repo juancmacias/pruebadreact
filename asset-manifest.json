@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/pruebadreact/static/css/main.875540de.css",
+    "main.js": "/pruebadreact/static/js/main.6a4f9a35.js",
+    "static/media/misc333.mp3": "/pruebadreact/static/media/misc333.ad776739a35f166538b8.mp3",
+    "index.html": "/pruebadreact/index.html",
+    "main.875540de.css.map": "/pruebadreact/static/css/main.875540de.css.map",
+    "main.6a4f9a35.js.map": "/pruebadreact/static/js/main.6a4f9a35.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.875540de.css",
+    "static/js/main.6a4f9a35.js"
+  ]
+}
