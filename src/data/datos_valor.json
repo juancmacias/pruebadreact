@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Básico",
+        "level": "basic",
+        "invited": 30
+    },
+    {
+        "id": 2,
+        "title": "Intermedio",
+        "level": "Intermediate",
+        "invited": 35
+    },
+    {
+        "id": 3,
+        "title": "Avanzado",
+        "level": "avanzado",
+        "invited": 40
+    }
+]

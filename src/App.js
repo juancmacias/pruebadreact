@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React from 'react'
+import {
+  BrowserRouter ,
+  Route, Routes
+} from "react-router-dom";
+
+
+import Jugar from './components/Jugar';
+import Nuvousuario from './components/Nuvousuario';
+import Detalles from './components/Detalles';
+import Productos from './components/Productos';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Comenzarjuego from './components/jugar/Comenzarjuego';
+import Login from './components/login'
 import './App.css';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div>
+      <Header/>
+        <Routes>
+            <Route exact path='/' element={<Jugar />} />
+            <Route path='productos' element={<Productos />} />
+            <Route path='register' element={<Nuvousuario />} />
+            <Route path='detalles/:id' element={<Detalles />} />
+            <Route path='jugar' element={<Comenzarjuego />} />
+            <Route path='*' element={<Login to='login' replace />} />
+        </Routes>
+        <Footer/>
     </div>
-  );
+    </BrowserRouter>
+  )
 }
 
 export default App;

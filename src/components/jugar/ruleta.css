@@ -1,0 +1,1 @@
+img[alt~="roulette-static"] { position: absolute; z-index: 5; width: 10%; right: 35px; top: 35px; content: url("http://imgur.com/SZ8Cm.jpg"); }
