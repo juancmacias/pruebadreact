@@ -1,20 +1,30 @@
 import { Link } from 'react-router-dom';
 import valores from "../data/datos_valor.json";
+import './css/productos.css'
+
+
 function Productos() {
     return (
-      <div>
-        <h1>Productos</h1>
-        <hr />
+      <main>
+        <h2>Elija un plan que se adapte a sus necesidades de participación</h2>
+        <div class="row">
         { 
           valores.map((datos, id)=>(
-            <section key={id} idd={id}>
-              {datos.title}
-              <Link to={`/detalles/${id}`}>Ver detalles del producto</Link>
-            <hr />
-            </section>
+            <div class="column">
+              <div class="card">
+                <h3>{datos.title}</h3>
+                <div className='precio'>{datos.precio} {datos.moneda}</div>
+                <p>{datos.op1}</p>
+                <p>{datos.op2}</p>
+                <p>{datos.op3}</p>
+                <div className='usuario'>{datos.invited}</div>
+                <button to={`/detalles/${id}`}>Seleccionar plan</button>
+              </div>
+            </div>
           ))
         }
-      </div>
+        </div>
+      </main>
 
     );
   };

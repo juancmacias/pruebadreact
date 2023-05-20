@@ -1,10 +1,10 @@
 function Nuvousuario(){
     return (
-      <header>
+      <main>
         <h1>Nuevo usuario</h1>
         <hr />
 
-      </header>
+      </main>
     );
   };
   

@@ -1,38 +1,44 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../logo.svg'
 
 import Login from '../components/login';
-
+import './css/header.css';
 const Header = () => {
 
   return (
     <header>
-      <div>
-        <h1>El juego de la ruleta</h1>
-        <Login/>
-
+      <div id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <hr />
-      <div className="links">
-        <NavLink to="/" className="link" style={
-            ({ isActive }) => ({ 
-                    color: isActive ? 'greenyellow' : 'black'
-            })}>
-          Home
-        </NavLink>
-        <NavLink to="/productos" className="link" style={
-            ({ isActive }) => ({ 
-                    color: isActive ? 'greenyellow' : 'black'
-            })}>
+      <nav>
+        <NavLink to="/productos" style={
+          ({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'black'
+          })}>
           Productos
         </NavLink>
-        <NavLink to="/register" className="link" style={
-            ({ isActive }) => ({ 
-                    color: isActive ? 'greenyellow' : 'black'
-            })}>
+        <NavLink to="/register" style={
+          ({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'black'
+          })}>
           Register
         </NavLink>
-      </div>
+
+        <Login />
+        <NavLink to="/register" style={
+          ({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'black'
+          })}>
+          Carrito
+        </NavLink>
+      </nav>
+      <a href='pruebadreact/' title=''>
+        <img src={logo} alt="ruleta" class="logo" />
+      </a>
+
     </header>
   );
 };

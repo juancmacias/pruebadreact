@@ -12,7 +12,7 @@ import Productos from './components/Productos';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Comenzarjuego from './components/jugar/Comenzarjuego';
-import Login from './components/login'
+
 import './App.css';
 
 function App() {
@@ -22,14 +22,13 @@ function App() {
     <div>
       <Header/>
         <Routes>
-            <Route exact path='/' element={<Jugar />} />
+            <Route exact path='pruebadreact/' element={<Jugar />} />
             <Route path='productos' element={<Productos />} />
             <Route path='register' element={<Nuvousuario />} />
             <Route path='detalles/:id' element={<Detalles />} />
-            <Route path='jugar' element={<Comenzarjuego />} />
-            <Route path='*' element={<Login to='login' replace />} />
+            <Route path='jugar' element={<Comenzarjuego />} /> 
         </Routes>
-        <Footer/>
+      <Footer/>
     </div>
     </BrowserRouter>
   )

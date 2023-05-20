@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-
+import { Avatar, Space } from 'antd';
+import './login.css'
 function Login() {
     const [ user, setUser ] = useState([]);
     let [ profile, setProfile ] = useState([]);
@@ -35,7 +36,7 @@ function Login() {
         googleLogout();
         setProfile(null);
         localStorage.clear();
-        window.location = '/';
+        window.location = 'pruebadreact/';
     };
     if(localStorage.getItem('user') !== undefined){
         profile = JSON.parse(localStorage.getItem('user'));
@@ -43,14 +44,33 @@ function Login() {
     return (
         <div>
             {profile ? (
-                <div>
-                    <img src={profile.picture} alt={"user imag"} />
-                    <p>Name: {profile.name}</p>
-                    <p>Email Address: {profile.email}</p>
-                    <button onClick={logOut}>Log out</button>
+                <div class="opc">
+ 
+             
+                <div class="selectorOrder">
+                    <div class="dropup">
+                        <button class="dropbtn">
+                            <Space wrap size={16}>
+                                <Avatar src={profile.picture} />
+                            </Space>
+                        </button>
+                    <div class="dropup-content">
+                        <p>{profile.name}</p>
+                        <p>{profile.email}</p>
+                        <div ><button class="nuevo" onClick={logOut}>Cerrar sesión</button></div>
+                    </div>
+                    </div>
+                </div>
+
+                    
+
                 </div>
             ) : (
-                <button onClick={() => login()}>Sign in with Google 🚀 </button>
+                <div class="selectorOrder">
+                    <div class="dropup">
+                        <button onClick={() => login()}>Sign in with Google 🚀 </button>
+                    </div>
+                </div>
             )}
         </div>
     );
