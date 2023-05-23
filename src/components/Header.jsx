@@ -14,24 +14,15 @@ const Header = () => {
         <span></span>
       </div>
       <nav>
-        <NavLink to="/productos" style={
-          ({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'black'
-          })}>
+        <NavLink to="/productos">
           Productos
         </NavLink>
-        <NavLink to="/register" style={
-          ({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'black'
-          })}>
+        <NavLink to="/register">
           Register
         </NavLink>
 
         <Login />
-        <NavLink to="/register" style={
-          ({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'black'
-          })}>
+        <NavLink to="/register">
           Carrito
         </NavLink>
       </nav>

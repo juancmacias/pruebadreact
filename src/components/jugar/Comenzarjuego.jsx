@@ -1,10 +1,15 @@
 import { Wheel } from 'react-custom-roulette';
 import React, { useState } from 'react';
+import  { useEffect, useRef } from 'react';
 import { Button, Space } from 'antd';
 import Resultado from '../modal/resultado';
 import Pregunta from '../modal/pregunta';
+//import CuentaAtras from '../modal/cuentaAtras';
 import sound from './misc333.mp3';
 import './ruleta.css';
+
+import close from '../../img/close.svg';
+import spin from '../../img/spin.svg';
 
 
 const data = [
@@ -31,7 +36,8 @@ function Comenzarjuego() {
   const [preguntas, setPreguntas] = useState([]);
   const [respuesta, setRespuesta] = useState();
   const [toggle, setToggle] = useState(true);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [iniciarCuenta, setIniciarCuenta] = useState(false)
   const audio = new Audio(sound)
 
   const handleSpinClick = () => {
@@ -52,7 +58,7 @@ function Comenzarjuego() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apikey}DBfp1jTGcKoOCd8OVySnT3BlbkFJU8zJW6FpvPFbnnrOcBU0`
+        'Authorization': `Bearer ${apikey}qMnzckqSmTuvsUVCp9j3T3BlbkFJLOsjRva1PSXRB9QGOEtw`
       },
       body: JSON.stringify({
         prompt,
@@ -64,36 +70,102 @@ function Comenzarjuego() {
       .then(data => setChatList(data))
 
   const comprobar = (nu) => {
-    const ok = preguntas[4].descripcion.trim().toLowerCase().replace('respuesta correcta: ', '');
-    let seleccion = preguntas[nu].descripcion.trim().toLowerCase();
-    //let s_obj_ok = new String(ok)
-    //seleccion = seleccion
-    console.log("RESPUESTA = "+ seleccion + " BUENA = "+ok);
+    if (nu !== null){
+      const ok = preguntas[4].descripcion.trim().toLowerCase().replace('respuesta correcta: ', '');
+      let seleccion = preguntas[nu].descripcion.trim().toLowerCase();
+      //let s_obj_ok = new String(ok)
+      //seleccion = seleccion
+      console.log("RESPUESTA = "+ seleccion + " BUENA = "+ok);
 
-    let acierto = seleccion.includes(ok);
-    console.log("resultado "+ acierto ? true : false)
-    if(!acierto){
-      acierto = ok.includes(seleccion);
+      let acierto = seleccion.includes(ok);
+      console.log("resultado "+ acierto ? true : false)
+      if(!acierto){
+        acierto = ok.includes(seleccion);
+      }
+      setToggle(acierto)
+      setIsOpen(true)
+      setRespuesta(acierto ? true : false);
+      console.log(ok.includes(seleccion));
     }
-    setToggle(acierto)
-    setIsOpen(true)
-    setRespuesta(acierto ? true : false);
-    console.log(ok.includes(seleccion));
+    
   }
 
   const resultadoSeparar = chatList.choices[0] ? chatList.choices[0].text : miFecht(`hazme una pregunta sobre ${data[prizeNumber].option}, con 
   tres posible respuestas y marcas la correcta, mostrándome
   entre paréntesis correcta, ejemplo: (correcta)`);
+  
+  const [second, setSecond] = useState('00');
+  const [minute, setMinute] = useState('00');
+  const [isActive, setIsActive] = useState(false);
+  const [counter, setCounter] = useState(5);
 
+  const miRef = useRef(null);
+  const onVisibilityChange = (entries) => {
+      // Si el componente es visible
+      if (entries[0].isIntersecting === true) {
+        console.log('El componente ahora es visible!');
+        setIsActive(true)
+        // Aquí puedes colocar la llamada a la función que deseas ejecutar
+      }
+    };
+
+
+
+  useEffect(() => {
+    let intervalId;
+          if(second === '00'){
+            console.log("finalizado");
+            setIsActive(false)
+        
+          }else{
+            console.log("segundo: "+second);
+          }
+    if (isActive) {
+      intervalId = setInterval(() => {
+        const secondCounter = counter % 60;
+        const minuteCounter = Math.floor(counter / 60);
+
+        const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}`: secondCounter;
+        const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
+
+        setSecond(computedSecond);
+        setMinute(computedMinute);
+
+        setCounter(counter => counter - 1);
+      }, 1000)
+    }
+    
+
+
+    return () => clearInterval(intervalId);
+  }, [isActive, counter, second])
+  useEffect(() => {
+    const observer = new IntersectionObserver(onVisibilityChange);
+    observer.observe(miRef.current);
+
+    // limpiar el observer cuando no esté en uso
+    return () => { 
+      observer.disconnect(); 
+    };
+  }, []);
+  
 
   return (
     <main>
       <Wheel
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        spinDuration={0.7}
-        data={data}
-
+       className="ruleta"
+       mustStartSpinning={mustSpin}
+       prizeNumber={prizeNumber}
+       spinDuration={0.7}
+       data={data}
+       textColors={['transparent']}
+       innerBorderColor={['transparent']}
+       outerBorderWidth={0}
+       innerBorderWidth={0}
+       radiusLineWidth={0}
+       borderWidth={0}
+       innerRadius={1}
+       sizeMultiplier={0}
 
         onStopSpinning={() => {
           setMustSpin(false);
@@ -118,38 +190,47 @@ function Comenzarjuego() {
           audio.pause();
           setClassCambio(true);
           setPreguntas([]);
+          //if(resultadoSeparar.length > 1)
+          setIniciarCuenta(true);
+
         }}
       />
-      <button type="primary" onClick={handleSpinClick}>Girar</button>
+        <a href='#' className="btn-girar" onClick={handleSpinClick}>
+          <img src={spin} alt="close logo" />
+        </a>
+        <a href='/' className="btn-cerrar">
+          <img src={close} alt="close logo" />
+        </a>
 
       <div className={classCambio ? 'visible':'oculto'} style={data[prizeNumber].style}>
 
         <div className={`fondoModal_A ${classCambio ? 'visible':'oculto'}`} style={data[prizeNumber].style}>
           <div className="contenedorModal_A">
-
+          
           <Resultado open = {isOpen} close = { () => setIsOpen(false)} acierto={respuesta}>{respuesta ? 'acertado':'fallado'}</Resultado>
 
 
           <Pregunta open = {!isOpen} close = { () => setIsOpen(false)}>
+          
               <div className={`contenidoModal_A ${classCambio ? 'visible':'oculto'}`}>
               <div className="rpregunta" style={data[prizeNumber].style}>
-                La pregunta va sobre: {data[prizeNumber].option}
+                {data[prizeNumber].option}
               </div>
               
               {resultadoSeparar.split(/\r?\n/).map((instruction, index) => {
-                let marcador = '';
+                //let marcador = '';
                 if (instruction !== "") {
                   let existe = instruction.includes('(correcta)');
                   if (existe) {
                     instruction = instruction.replace('(correcta)', '');
-                    marcador = index + 1
+                    //marcador = index + 1
 
                   } else {
                     instruction = instruction.replace('(incorrecto)', '');
                     instruction = instruction.replace('(incorrecta)', '');
                   }
-                  console.log("La respuesta es:" + marcador);
-                  console.log("Total retorno" + JSON.stringify(resultadoSeparar));
+                  //console.log("La respuesta es:" + marcador);
+                  //console.log("Total retorno" + JSON.stringify(resultadoSeparar));
                   if (instruction !== "Iniciando juego") {
                     preguntas.push({
                       id: index + 1,
@@ -161,7 +242,15 @@ function Comenzarjuego() {
                 }
               })
               }
-              <Space direction="vertical" style={{ width: '100%'}}>
+              <Space direction="vertical" style={{ width: '100%'}} ref={miRef}>
+              <div className="container">
+                  <div className="time" >
+                    <span className="minute">{minute}</span>
+                    <span>:</span>
+                    <span className="second">{second}</span>
+                  </div>
+              </div>
+             
                 {
                   preguntas.map((pregunta, index) => (
                     (() => {
@@ -169,15 +258,17 @@ function Comenzarjuego() {
                         case 0:
                           return <div className='pregunta'>{pregunta.descripcion}</div>
                         case 1:
-                          return <Button className='fuenteboton' onClick={() => comprobar(1)} type="primary" block>{pregunta.descripcion}</Button>
+                          return <Button className='fuenteboton' onClick={() => comprobar(1)} type="dashed" block>{pregunta.descripcion}</Button>
                         case 2:
-                          return <Button className='fuenteboton' onClick={() => comprobar(2)}  block>{pregunta.descripcion}</Button>
+                          return <Button className='fuenteboton' onClick={() => comprobar(2)} type="dashed" block>{pregunta.descripcion}</Button>
                         case 3:
+                          
                           return <Button className='fuenteboton' onClick={() => comprobar(3)} type="dashed" block>{pregunta.descripcion}</Button>
                         default:
                           return ""
                       }
                     })()))
+                    
                 }
               </Space>
               

@@ -19,11 +19,11 @@
 }
 
 .acertado {
-  background: green;
+  background: rgb(87, 255, 87);
 }
 
 .fallo {
-  background: red;
+  background: rgb(255, 75, 75);
 }
 
 .resultado img {
