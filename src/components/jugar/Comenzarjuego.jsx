@@ -1,7 +1,8 @@
 import { Wheel } from 'react-custom-roulette';
-import React, { useState } from 'react';
+import { useNavigate  } from "react-router-dom"
+import React, { useCallback, useState } from 'react';
 import  { useEffect, useRef } from 'react';
-import { Button, Space } from 'antd';
+import { Button, Result, Space } from 'antd';
 import Resultado from '../modal/resultado';
 import Pregunta from '../modal/pregunta';
 //import CuentaAtras from '../modal/cuentaAtras';
@@ -37,15 +38,16 @@ function Comenzarjuego() {
   const [respuesta, setRespuesta] = useState();
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const [iniciarCuenta, setIniciarCuenta] = useState(false)
+  const timerIdRef = useRef(0);
+  const [count, setCount] = useState(30);
   const audio = new Audio(sound)
-
+  const navigate = useNavigate();
   const handleSpinClick = () => {
     if (!mustSpin) {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
-      //audio.play();
+      audio.play();
       setClassCambio(false);
     }
   }
@@ -69,86 +71,58 @@ function Comenzarjuego() {
       .then(response => response.json())
       .then(data => setChatList(data))
 
-  const comprobar = (nu) => {
-    if (nu !== null){
-      const ok = preguntas[4].descripcion.trim().toLowerCase().replace('respuesta correcta: ', '');
-      let seleccion = preguntas[nu].descripcion.trim().toLowerCase();
-      //let s_obj_ok = new String(ok)
-      //seleccion = seleccion
-      console.log("RESPUESTA = "+ seleccion + " BUENA = "+ok);
+      const  comprobar = useCallback((nu) => {
+        
 
-      let acierto = seleccion.includes(ok);
-      console.log("resultado "+ acierto ? true : false)
-      if(!acierto){
-        acierto = ok.includes(seleccion);
-      }
-      setToggle(acierto)
-      setIsOpen(true)
-      setRespuesta(acierto ? true : false);
-      console.log(ok.includes(seleccion));
-    }
-    
-  }
+            const ok = preguntas[4].descripcion.trim().toLowerCase().replace('respuesta correcta: ', '');
+            let seleccion = preguntas[nu].descripcion.trim().toLowerCase();
+            //let s_obj_ok = new String(ok)
+            //seleccion = seleccion
+            console.log("RESPUESTA = "+ seleccion + " BUENA = "+ok);
+
+            let acierto = seleccion.includes(ok);
+            console.log("resultado "+ acierto ? true : false)
+            if(!acierto){
+              acierto = ok.includes(seleccion);
+            }
+            setToggle(acierto)
+            setIsOpen(true)
+            setRespuesta(acierto ? true : false);
+            console.log(ok.includes(seleccion));
+            isOpen? setCount(-1):setCount(-1);
+
+        }, [preguntas, setCount,isOpen]);
 
   const resultadoSeparar = chatList.choices[0] ? chatList.choices[0].text : miFecht(`hazme una pregunta sobre ${data[prizeNumber].option}, con 
   tres posible respuestas y marcas la correcta, mostrándome
   entre paréntesis correcta, ejemplo: (correcta)`);
   
-  const [second, setSecond] = useState('00');
-  const [minute, setMinute] = useState('00');
-  const [isActive, setIsActive] = useState(false);
-  const [counter, setCounter] = useState(5);
-
-  const miRef = useRef(null);
-  const onVisibilityChange = (entries) => {
-      // Si el componente es visible
-      if (entries[0].isIntersecting === true) {
-        console.log('El componente ahora es visible!');
-        setIsActive(true)
-        // Aquí puedes colocar la llamada a la función que deseas ejecutar
-      }
-    };
-
-
-
-  useEffect(() => {
-    let intervalId;
-          if(second === '00'){
-            console.log("finalizado");
-            setIsActive(false)
-        
-          }else{
-            console.log("segundo: "+second);
-          }
-    if (isActive) {
-      intervalId = setInterval(() => {
-        const secondCounter = counter % 60;
-        const minuteCounter = Math.floor(counter / 60);
-
-        const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}`: secondCounter;
-        const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
-
-        setSecond(computedSecond);
-        setMinute(computedMinute);
-
-        setCounter(counter => counter - 1);
-      }, 1000)
-    }
+  const startHandler = () => {
     
+    if (timerIdRef.current) {
+      return;
+    }
+    timerIdRef.current = setInterval(() => setCount((c) => c - 1), 1000);
+    
+  };
 
-
-    return () => clearInterval(intervalId);
-  }, [isActive, counter, second])
-  useEffect(() => {
-    const observer = new IntersectionObserver(onVisibilityChange);
-    observer.observe(miRef.current);
-
-    // limpiar el observer cuando no esté en uso
-    return () => { 
-      observer.disconnect(); 
-    };
+ 
+  const stopHandler = useCallback(() => {
+    clearInterval(timerIdRef.current);
+    timerIdRef.current = 0;
   }, []);
-  
+  useEffect(() => {
+    return () => clearInterval(timerIdRef.current);
+  }, []);
+
+  useEffect(() => {
+    if(count === 0){
+      comprobar(0)
+    }if (count === -4) {
+      window.location.reload(true);
+    } 
+  }, [count, stopHandler, comprobar, navigate]); 
+
 
   return (
     <main>
@@ -191,14 +165,16 @@ function Comenzarjuego() {
           setClassCambio(true);
           setPreguntas([]);
           //if(resultadoSeparar.length > 1)
-          setIniciarCuenta(true);
+          
+          
 
         }}
       />
-        <a href='#' className="btn-girar" onClick={handleSpinClick}>
+        <button className="btn-girar" onClick={handleSpinClick}>
           <img src={spin} alt="close logo" />
-        </a>
-        <a href='/' className="btn-cerrar">
+        </button>
+
+        <a href='pruebadreact/' className="btn-cerrar">
           <img src={close} alt="close logo" />
         </a>
 
@@ -218,7 +194,6 @@ function Comenzarjuego() {
               </div>
               
               {resultadoSeparar.split(/\r?\n/).map((instruction, index) => {
-                //let marcador = '';
                 if (instruction !== "") {
                   let existe = instruction.includes('(correcta)');
                   if (existe) {
@@ -235,19 +210,15 @@ function Comenzarjuego() {
                     preguntas.push({
                       id: index + 1,
                       descripcion: instruction,
-                    });
+                    });                 
                   }
-                  //return <div>{`Step ${index + 1}: ${instruction}`}</div>;
-
                 }
               })
               }
-              <Space direction="vertical" style={{ width: '100%'}} ref={miRef}>
+              <Space direction="vertical" style={{ width: '550px'}} >
               <div className="container">
-                  <div className="time" >
-                    <span className="minute">{minute}</span>
-                    <span>:</span>
-                    <span className="second">{second}</span>
+                  <div className="time">
+                  {count}''
                   </div>
               </div>
              
@@ -262,11 +233,12 @@ function Comenzarjuego() {
                         case 2:
                           return <Button className='fuenteboton' onClick={() => comprobar(2)} type="dashed" block>{pregunta.descripcion}</Button>
                         case 3:
-                          
+                          startHandler();
                           return <Button className='fuenteboton' onClick={() => comprobar(3)} type="dashed" block>{pregunta.descripcion}</Button>
                         default:
                           return ""
                       }
+                      
                     })()))
                     
                 }

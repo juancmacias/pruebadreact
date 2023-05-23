@@ -14,9 +14,7 @@
   overflow-y: hidden;
 }
 
-body {
-   // background: linear-gradient(110.27deg, #8F37FF 20.7%, #FF96FB 106.44%);
-}
+
 
 img[alt~="roulette-static"] { 
     content: url("/src/img/triviafly.svg"); 
@@ -98,6 +96,7 @@ img[alt~="roulette-static"] {
 }
 .pregunta{
     font-size: 2em;
+    word-break:break-all;
 }
 
 .fuenteboton{
@@ -107,8 +106,15 @@ img[alt~="roulette-static"] {
     white-space: -pre-wrap;     /* Opera <7 */   
     white-space: -o-pre-wrap;   /* Opera 7 */    
     word-wrap: break-word;      /* IE */
-    height:140px;
+    height:100px;
     font-size:1.8em
+}
+.time{ 
+
+     -webkit-text-stroke: 1px #8F37FF; /* width and color */
+    font-size: 4.8em;
+    color: #FF96FB;
+    text-align: center;
 }
 .fondoModal_A{
     position: fixed;
@@ -144,3 +150,4 @@ img[alt~="roulette-static"] {
     background: #f7f9fb;
 
 }
+

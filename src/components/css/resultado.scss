@@ -28,10 +28,11 @@
 .fallo{
     background: rgb(255, 75, 75);
 }
+
 .resultado img{
     height: 140px;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    animation: scale 20s linear infinite;
+    animation: scale 5s linear infinite;
 }
 @keyframes scale {
     50% {

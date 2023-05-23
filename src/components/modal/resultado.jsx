@@ -9,9 +9,7 @@ function Resultado({children, open, close, acierto}) {
   return (
     
     <div className="resultado">
-          <div>
-            <button onClick={close}>x</button> </div>
-            
+           
           {
             acierto
              ? <div className="acertado acierto_fallo">
