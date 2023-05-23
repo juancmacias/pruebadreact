@@ -2,7 +2,7 @@ import { Wheel } from 'react-custom-roulette';
 import { useNavigate  } from "react-router-dom"
 import React, { useCallback, useState } from 'react';
 import  { useEffect, useRef } from 'react';
-import { Button, Result, Space } from 'antd';
+import { Button,  Space } from 'antd';
 import Resultado from '../modal/resultado';
 import Pregunta from '../modal/pregunta';
 //import CuentaAtras from '../modal/cuentaAtras';
@@ -36,7 +36,7 @@ function Comenzarjuego() {
   const [classCambio, setClassCambio] = useState(false);
   const [preguntas, setPreguntas] = useState([]);
   const [respuesta, setRespuesta] = useState();
-  const [toggle, setToggle] = useState(true);
+
   const [isOpen, setIsOpen] = useState(false);
   const timerIdRef = useRef(0);
   const [count, setCount] = useState(30);
@@ -52,7 +52,7 @@ function Comenzarjuego() {
     }
   }
   if (!localStorage.getItem('user')) {
-    window.location = '/';
+    window.location = '/pruebadreact';
   }
   let apikey = 'sk-';
   const miFecht = async (prompt) =>
@@ -85,7 +85,7 @@ function Comenzarjuego() {
             if(!acierto){
               acierto = ok.includes(seleccion);
             }
-            setToggle(acierto)
+            //setToggle(acierto)
             setIsOpen(true)
             setRespuesta(acierto ? true : false);
             console.log(ok.includes(seleccion));
@@ -125,7 +125,10 @@ function Comenzarjuego() {
 
 
   return (
-    <main>
+    <main style={{
+      overflow:"hidden",
+
+    }}>
       <Wheel
        className="ruleta"
        mustStartSpinning={mustSpin}
@@ -213,6 +216,7 @@ function Comenzarjuego() {
                     });                 
                   }
                 }
+                return ""
               })
               }
               <Space direction="vertical" style={{ width: '550px'}} >

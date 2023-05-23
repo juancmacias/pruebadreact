@@ -61,7 +61,7 @@ header nav a {
 }
 
 main {
-  margin-top: 120px;
+  margin-top: 77px;
 }
 
 @media (min-width: 991px) {
@@ -99,11 +99,6 @@ main {
   }
   article {
     padding: 10px;
-  }
-  footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 20px;
   }
 }
 * {

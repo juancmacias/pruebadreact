@@ -36,7 +36,7 @@ function Login() {
         googleLogout();
         setProfile(null);
         localStorage.clear();
-        window.location = 'pruebadreact/';
+        window.location = '/pruebadreact';
     };
     if(localStorage.getItem('user') !== undefined){
         profile = JSON.parse(localStorage.getItem('user'));
@@ -57,7 +57,7 @@ function Login() {
                     <div class="dropup-content">
                         <p>{profile.name}</p>
                         <p>{profile.email}</p>
-                        <div ><button class="nuevo" onClick={logOut}>Cerrar sesión</button></div>
+                        <div><button class="nuevo" onClick={logOut}>Cerrar sesión</button></div>
                     </div>
                     </div>
                 </div>

@@ -8,8 +8,6 @@
   box-sizing: border-box;
   list-style: none;
   font-family: "Nunito", sans-serif;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 img[alt~=roulette-static] {
@@ -98,7 +96,7 @@ img[alt~=roulette-static] {
 
 .pregunta {
   font-size: 2em;
-  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .fuenteboton {

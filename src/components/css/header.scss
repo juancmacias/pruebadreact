@@ -7,7 +7,7 @@ header nav a{display:block;margin:20px 15px 0 0;text-decoration:none;color:#8F37
 #burger.burguer-hovered span:nth-child(2){opacity:0}
 #burger.burguer-hovered span:nth-child(1){transform:rotate(-45deg) translate(-10px, 12px)}
 #burger.burguer-hovered span:nth-child(3){transform:rotate(45deg) translate(-8px, -12px)}
-main{margin-top:120px}
+main{margin-top:77px}
 @media (min-width:991px){
     header>div{display:none}
     header .logo{float:left}
@@ -17,7 +17,7 @@ main{margin-top:120px}
     main .title{bottom:20px;top:unset}
     #articles{padding:0 50px;display:flex;flex-wrap:wrap;align-items:flex-start}
     article{padding:10px}
-    footer{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:20px}
+
 }
 
 

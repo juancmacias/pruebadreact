@@ -26,7 +26,7 @@ const Header = () => {
           Carrito
         </NavLink>
       </nav>
-      <a href='pruebadreact/' title=''>
+      <a href='/pruebadreact' title=''>
         <img src={logo} alt="ruleta" class="logo" />
       </a>
 

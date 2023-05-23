@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import valores from "../data/datos_valor.json";
 import './css/productos.css'
 
@@ -17,7 +17,8 @@ function Productos() {
                 <p>{datos.op1}</p>
                 <p>{datos.op2}</p>
                 <p>{datos.op3}</p>
-                <div className='usuario'>{datos.invited}</div>
+                <div className='usuario'>Usuarios: {datos.invited}</div>
+
                 <button to={`/detalles/${id}`}>Seleccionar plan</button>
               </div>
             </div>

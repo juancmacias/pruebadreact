@@ -10,7 +10,7 @@ import Nuvousuario from './components/Nuvousuario';
 import Detalles from './components/Detalles';
 import Productos from './components/Productos';
 import Header from './components/Header';
-import Footer from './components/Footer';
+import Footer from './footer/Footer';
 import Comenzarjuego from './components/jugar/Comenzarjuego';
 
 import './App.css';
