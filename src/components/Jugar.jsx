@@ -4,6 +4,7 @@ function Jugar() {
       <main>
         <h1>Jugar</h1>
         <hr />
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <Link to={`/jugar`}>Jugar</Link>
         
       </main>

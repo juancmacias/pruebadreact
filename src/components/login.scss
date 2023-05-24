@@ -15,6 +15,7 @@ a {
     cursor: pointer;
     
   }
+
   
   .menu-title {
     display: block;
@@ -182,6 +183,9 @@ a {
   position: relative;
   display: inline-block;
 }
+.login{
+  border-radius: 10px;
+}
 .dropup-content {
     display: none;
     position: absolute;
@@ -237,4 +241,39 @@ a {
 .nuevo:hover{
 
     cursor: pointer;
+}
+.logarse{
+  display: table;
+
+  margin: auto;
+}
+.formulario{
+  margin-top: 100px;
+  display: table-caption;
+  background-color: white;
+  padding: 8px 80px;
+  border-radius: 10px;
+}
+.formulario input{
+  margin-top: 10px;
+}
+.formulario input[type="email"]:focus, .formulario input[type="password"]:focus {
+  border-color: #be3cdf;
+}
+
+.formulario [ type="submit"], .formulario .google {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  background-color: #fff;
+  border-radius: 25px;
+  color: #FE51FF;
+  border: solid 1px #FE51FF;
+  cursor: pointer;
+  opacity: 0;
+  animation: fade-in 1s 1s forwards;
+}
+.formulario [ type="submit"]:hover, .formulario .google{
+color:#fff;
+background-color: #FE51FF;
 }

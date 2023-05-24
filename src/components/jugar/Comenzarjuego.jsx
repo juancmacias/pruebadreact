@@ -47,7 +47,7 @@ function Comenzarjuego() {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
-      audio.play();
+      //audio.play();
       setClassCambio(false);
     }
   }
@@ -125,10 +125,7 @@ function Comenzarjuego() {
 
 
   return (
-    <main style={{
-      overflow:"hidden",
-
-    }}>
+    <main>
       <Wheel
        className="ruleta"
        mustStartSpinning={mustSpin}

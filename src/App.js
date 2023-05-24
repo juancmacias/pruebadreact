@@ -12,6 +12,7 @@ import Productos from './components/Productos';
 import Header from './components/Header';
 import Footer from './footer/Footer';
 import Comenzarjuego from './components/jugar/Comenzarjuego';
+import Logarse from './components/logarse';
 
 import './App.css';
 
@@ -25,6 +26,7 @@ function App() {
             <Route exact path='pruebadreact/' element={<Jugar />} />
             <Route path='productos' element={<Productos />} />
             <Route path='register' element={<Nuvousuario />} />
+            <Route path='logarse' element={<Logarse />} />
             <Route path='detalles/:id' element={<Detalles />} />
             <Route path='jugar' element={<Comenzarjuego />} /> 
         </Routes>

@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from '../img/triviafly.svg'
-import logo1 from '../img/Frame 6.svg'
+
+import logo1 from '../img/Frame_6.svg'
 import icons1 from '../img/logo-facebook.svg'
 import icons2 from '../img/logo-instagram.svg'
 import icons3 from '../img/logo-twitter.svg'
@@ -35,17 +35,17 @@ function Footer() {
           <h2>¡Síguenos! :)</h2>
           <ul>
             <li>
-              <a href="https://www.facebook.com/" target="_blank">
+              <a href="https://www.facebook.com/" target="_blank"  rel="noreferrer" >
                 <img src={icons1} alt="icons" className="icons" /> 
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/" target="_blank">
+              <a href="https://www.instagram.com/" target="_blank"  rel="noreferrer" >
               <img src={icons2} alt="icons" className="icons" />
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/" target="_blank">
+              <a href="https://twitter.com/" target="_blank"  rel="noreferrer" >
               <img src={icons3} alt="icons" className="icons" />
               </a>
             </li>
