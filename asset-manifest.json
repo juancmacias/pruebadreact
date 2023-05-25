@@ -1,24 +1,27 @@
 {
   "files": {
-    "main.css": "/pruebadreact/static/css/main.7e3d7dd5.css",
-    "main.js": "/pruebadreact/static/js/main.9105dd80.js",
+    "main.css": "/pruebadreact/static/css/main.720a91cf.css",
+    "main.js": "/pruebadreact/static/js/main.e4f0b86c.js",
+    "static/media/aboutus.svg": "/pruebadreact/static/media/aboutus.05c8b8eefe352aba1c1185e8b64a6a41.svg",
     "static/media/misc333.mp3": "/pruebadreact/static/media/misc333.ad776739a35f166538b8.mp3",
     "static/media/pensamiento.png": "/pruebadreact/static/media/pensamiento.b0b49de6d2c2ece2a992.png",
     "static/media/fiesta.png": "/pruebadreact/static/media/fiesta.49d8451bf66804cb95cb.png",
     "static/media/logo.svg": "/pruebadreact/static/media/logo.595d0538c8acd14e3ef1161133a2904e.svg",
+    "static/media/fondo_main.svg": "/pruebadreact/static/media/fondo_main.08a3a40611ed278f6ea68f57a017ceed.svg",
     "static/media/triviafly.svg": "/pruebadreact/static/media/triviafly.dd3894293651cc7496c9.svg",
     "static/media/Frame_6.svg": "/pruebadreact/static/media/Frame_6.b97b7ff83743e44bb4de4641f5fd0ced.svg",
+    "static/media/title_logo.svg": "/pruebadreact/static/media/title_logo.ac6e9fa8bf82841b4e60fc8a46c1972a.svg",
     "static/media/spin.svg": "/pruebadreact/static/media/spin.f8bff7e645c947e2c201a3328ef6824d.svg",
     "static/media/close.svg": "/pruebadreact/static/media/close.ef807985a37c48c474ce2aa54059d2a5.svg",
     "index.html": "/pruebadreact/index.html",
     "static/media/logo-twitter.svg": "/pruebadreact/static/media/logo-twitter.0b04117cb482dfccdae5af83f592f8d3.svg",
     "static/media/logo-instagram.svg": "/pruebadreact/static/media/logo-instagram.b15bc616029fa0ee5c09334bd2d75d12.svg",
     "static/media/logo-facebook.svg": "/pruebadreact/static/media/logo-facebook.6555562764c3d103f26762c808f8a357.svg",
-    "main.7e3d7dd5.css.map": "/pruebadreact/static/css/main.7e3d7dd5.css.map",
-    "main.9105dd80.js.map": "/pruebadreact/static/js/main.9105dd80.js.map"
+    "main.720a91cf.css.map": "/pruebadreact/static/css/main.720a91cf.css.map",
+    "main.e4f0b86c.js.map": "/pruebadreact/static/js/main.e4f0b86c.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e3d7dd5.css",
-    "static/js/main.9105dd80.js"
+    "static/css/main.720a91cf.css",
+    "static/js/main.e4f0b86c.js"
   ]
 }
