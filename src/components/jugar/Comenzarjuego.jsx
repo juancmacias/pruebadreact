@@ -7,6 +7,7 @@ import Resultado from '../modal/resultado';
 import Pregunta from '../modal/pregunta';
 //import CuentaAtras from '../modal/cuentaAtras';
 import sound from './misc333.mp3';
+
 import './ruleta.css';
 
 import close from '../../img/close.svg';
@@ -47,6 +48,7 @@ function Comenzarjuego() {
   const timerIdRef = useRef(0);
   const [count, setCount] = useState(tiempo);
   const audio = new Audio(sound)
+  
   const navigate = useNavigate();
   
   const handleSpinClick = () => {
