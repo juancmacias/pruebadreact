@@ -22,7 +22,7 @@ const Header = () => {
         </NavLink>
 
         <Login />
-        <NavLink to="/register">
+        <NavLink to="/carrito">
           Carrito
         </NavLink>
       </nav>

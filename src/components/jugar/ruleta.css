@@ -46,6 +46,26 @@ img[alt~=roulette-static] {
   color: white;
 }
 
+.games-counter {
+  position: absolute;
+  top: 10% !important;
+  left: 10% !important;
+  z-index: 16 !important;
+}
+.games-counter h3 {
+  font-weight: 900;
+  color: #f7f9fb;
+  font-size: 20px;
+  text-align: center;
+}
+.games-counter p {
+  margin-top: -15px;
+  font-weight: 900;
+  color: #f7f9fb;
+  font-size: 40px;
+  text-align: center;
+}
+
 /* ruleta */
 .bhdLno {
   margin: 0 auto;
@@ -96,6 +116,13 @@ img[alt~=roulette-static] {
 
 .pregunta {
   font-size: 2em;
+  color: #000000;
+  word-wrap: break-word;
+}
+
+.fuenteboton span {
+  color: #000000;
+  font-size: 1em;
   word-wrap: break-word;
 }
 
@@ -146,4 +173,28 @@ img[alt~=roulette-static] {
   padding: 20px;
   border-radius: 15px;
   background: #f7f9fb;
+}
+
+@media (max-width: 991px) {
+  .contenedorModal_A {
+    margin: 0 auto;
+  }
+  .fondoModal_A {
+    width: 104vw;
+    height: 104vh;
+  }
+  .ant-space {
+    width: auto !important;
+  }
+  .fuenteboton {
+    height: auto;
+    min-height: 50px;
+  }
+  .pregunta {
+    font-size: 1.2em;
+  }
+  .fuenteboton span {
+    color: black;
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=ruleta.css.map */

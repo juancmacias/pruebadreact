@@ -37,11 +37,18 @@ function Comenzarjuego() {
   const [preguntas, setPreguntas] = useState([]);
   const [respuesta, setRespuesta] = useState();
 
+  let profile = JSON.parse(localStorage.getItem('user'));
+  let tiradas = profile.productos.tiras;
+  let resto = Number(localStorage.getItem('tiradas')) ? Number(localStorage.getItem('tiradas')) :0 ;
+  const tiempo = profile.productos.time
+
+
   const [isOpen, setIsOpen] = useState(false);
   const timerIdRef = useRef(0);
-  const [count, setCount] = useState(30);
+  const [count, setCount] = useState(tiempo);
   const audio = new Audio(sound)
   const navigate = useNavigate();
+  
   const handleSpinClick = () => {
     if (!mustSpin) {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
@@ -49,8 +56,13 @@ function Comenzarjuego() {
       setMustSpin(true);
       //audio.play();
       setClassCambio(false);
+
+      console.log("tiradas_ --> "+ (Number(resto)-1))
+      localStorage.setItem('tiradas',( Number(resto) + 1));
+
     }
   }
+
   if (!localStorage.getItem('user')) {
     window.location = '/pruebadreact';
   }
@@ -120,8 +132,12 @@ function Comenzarjuego() {
       comprobar(0)
     }if (count === -4) {
       window.location.reload(true);
+      if(resto === tiradas){
+        window.location = '/resumen';
+        localStorage.removeItem('tiradas');
+      }
     } 
-  }, [count, stopHandler, comprobar, navigate]); 
+  }, [count, stopHandler, comprobar, navigate, resto, tiradas]); 
 
 
   return (
@@ -177,7 +193,10 @@ function Comenzarjuego() {
         <a href='pruebadreact/' className="btn-cerrar">
           <img src={close} alt="close logo" />
         </a>
-
+        <div className="games-counter">
+            <h3>Rondas:</h3>
+            <p>{resto}/{tiradas}</p>
+        </div>
       <div className={classCambio ? 'visible':'oculto'} style={data[prizeNumber].style}>
 
         <div className={`fondoModal_A ${classCambio ? 'visible':'oculto'}`} style={data[prizeNumber].style}>

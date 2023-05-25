@@ -1,20 +1,24 @@
 /* Float four columns side by side */
-.column {
-    
-    width: 230px!important;
-    padding: 0 10px;
+.column1 {
+    width: 100%!important;
+    height: 250px;
+    padding: 0 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
-  
+
   /* Remove extra left and right margins, due to padding */
-  .row {
+  .row1 {
     display: flex!important;
     align-items: center;
-  justify-content: center;
+    justify-content: center;
 
   }
   
   /* Clear floats after the columns */
-  .row:after {
+  .row1:after {
     content: "";
     display: table;
     clear: both;
@@ -23,7 +27,7 @@
 
   
   /* Style the counter cards */
-  .card {
+  .card1 {
     display: flex!important;
     align-items: center;
     justify-content: space-around;
@@ -32,7 +36,16 @@
     text-align: center;
     background-color: #f1f1f1;
     height: 400px!important;
-    color: black;
+    width: 90%;
+
+     .p-1{
+        color: #000000;
+        text-align: left;
+
+        ul {
+          list-style: none;
+      }
+     }
   }
 button{
     border-radius: 5px!important;
@@ -68,7 +81,7 @@ button{
   font-weight: 600;
 }
 .usuario{
-  font-size: 1.1em;
+  font-size: 1.7em;
   font-weight: 400;
 }
 main h2{
@@ -76,9 +89,16 @@ main h2{
   font-size: 1.6em;
 }
 
-@media (max-width:991px){
-  .column {
-    width: 100%!important;
-    padding: 10px 10px;
-  }
+.botton{
+    background-color:#ff1a1a;
+}
+
+.total-carrito{
+    width: 88%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }

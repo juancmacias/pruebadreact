@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
+
+import MainPage from './jugar/MainPage/MainPage.jsx';
+import AboutUs from './jugar/AboutUs/AboutUs.jsx';
 function Jugar() {
+
     return (
-      <main>
-        <h1>Jugar</h1>
-        <hr />
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <Link to={`/jugar`}>Jugar</Link>
-        
+      <main style={{ maxWidth: "100%", marginTop:"79px" }}>
+        <MainPage/>
+        <AboutUs/>
       </main>
 
     );

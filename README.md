@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Triviamorphosis
+Triviamorphosis es una página web interactiva basada en React( HTML, CSS, JavaScript y SCSS). Esta aplicación te desafía con preguntas relacionadas con programación dinámica y te permite poner a prueba tus conocimientos en HTML, JavaScript, React,PYTHON, SCSS y CSS. ¡Diviértete mientras aprendes!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://github.com/Liliana2817/Triviamorphosis/assets/126781409/137fa86f-68e3-43b2-b5df-f017c0780944/do-frontend-web-development-in-html-css-and-reactjs.png" alt="JuveYell"  width="300px">
 
-## Available Scripts
+## Características de la Aplicación
+- Interfaz de usuario atractiva y fácil de usar.
+- Amplia variedad de preguntas relacionadas con programación.
+- Uso de un modelo de inteligencia Artificial de la empresa openAi para generar las preguntas.
+- Facilidad de registro con el login de api de registro.
+- Contador de puntos para seguir tu progreso.
 
-In the project directory, you can run:
+## Uso
+Para utilizar esta página, simplemente abre el archivo index.html en un navegador web. Si deseas editar la página, los archivos HTML, CSS y JavaScript están disponibles en el repositorio.
 
-### `npm start`
+## Contribución
+¡Las contribuciones son bienvenidas! 
+Si deseas contribuir a este proyecto, sigue los pasos a continuación:
+1. Crea una rama (branch) en tu repositorio local para realizar tus cambios.
+2. Realiza las modificaciones y mejoras deseadas.
+3. Envía una solicitud de extracción (pull request) para revisar tus cambios.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Links
+* https://scrollrevealjs.org/guide/hello-world.html - Biblioteca utilizada para animaciones en la página.
+* https://validator.w3.org/ - Herramienta para validar la estructura y calidad del código HTML.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p> ¡Disfruta de Triviamorphosis y amplía tus conocimientos de programación dinámica! Si tienes alguna pregunta o sugerencia, no dudes en comunicárnosla. ¡Buena suerte! </p>
 
-### `npm test`
+## Desarrollado por:
+<a href="https://github.com/juancmacias">
+    <img src="https://avatars.githubusercontent.com/u/53483587?v=4" title="Juan Carlos Macías" width="80" height="80" style="max-width: 100%;"></a>
+ 
+ <a href="https://github.com/AlbertoDiazEsteban">
+    <img src="https://avatars.githubusercontent.com/u/126780588?v=4" title="AlbertoDiazEsteban" width="80" height="80" style="max-width: 100%;"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a href="https://github.com/askor222">
+    <img src="https://avatars.githubusercontent.com/u/126780308?v=4" title="askor222" width="80" height="80" style="max-width: 100%;"></a>
+   
+   <a href="https://github.com/Liliana2817">
+    <img src="https://avatars.githubusercontent.com/u/126781409?v=4" title="Liliana2817" width="80" height="80" style="max-width: 100%;"></a>
+    
+* Scrum Master: Liliana Garcia Severiche
+* Product Owner: Alberto Diaz Esteban
+* Desarrolladores:
+  - Juan Carlos Macías
+  - Kibria (askor222)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Tecnología usada:
+* React-HTML-CSS-JS-scss
+<div>
+<p style = 'text-align:center;'>
+<img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/283833175/original/0a834113cddac16445026a21442bb894042e63a4/do-frontend-web-development-in-html-css-and-reactjs.png" alt="JuveYell" width="300px">
+</p>
+</div>

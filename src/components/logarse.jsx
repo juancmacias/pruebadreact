@@ -67,7 +67,7 @@ function Logarse() {
         
     }
     return (
-        <div className='logarse'>
+        <main className='logarse'>
             {profile ? (
                 <div class="opc">
                     <div class="selectorOrder">
@@ -88,7 +88,7 @@ function Logarse() {
             ) : (
                 <div class="formulario">
                     <h3>Login</h3>
-                    <form onSubmit={handleSubmit}>
+                    <form className='miFormulario' onSubmit={handleSubmit}>
                         <input id="email" type="email" placeholder="Correo electrónico"  required />
                         <input id="password" type="password" placeholder="Contraseña" required />
                         <button type="submit">Iniciar sesión</button>
@@ -97,7 +97,7 @@ function Logarse() {
                         
                 </div>
             )}
-        </div>
+        </main>
     );
 }
 export default Logarse

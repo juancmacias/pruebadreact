@@ -4,6 +4,7 @@
 /* ------------------------------- RULETA ------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
+
 *{
   margin: 0;
   padding: 0;
@@ -46,7 +47,25 @@ img[alt~="roulette-static"] {
 .btn-cerrar:hover{
     color: white;
 }
-
+.games-counter {
+    position: absolute;
+    top: 10% !important;
+    left: 10% !important;
+    z-index: 16 !important;
+    h3 {
+        font-weight: 900;
+        color: #f7f9fb;
+        font-size: 20px;
+        text-align: center; 
+    }
+    p {
+        margin-top: -15px;
+        font-weight: 900;
+        color: #f7f9fb;
+        font-size: 40px;
+        text-align: center;
+    }
+}
 /* ruleta */
 .bhdLno {
     margin: 0 auto;
@@ -94,10 +113,14 @@ img[alt~="roulette-static"] {
 }
 .pregunta{
     font-size: 2em;
-
+    color: #000000;
     word-wrap: break-word;
 }
-
+.fuenteboton span{
+    color: #000000;
+    font-size: 1em;
+    word-wrap: break-word;
+}
 .fuenteboton{
     width:100%;
     white-space: pre-wrap;      /* CSS3 */   
@@ -149,4 +172,30 @@ img[alt~="roulette-static"] {
     background: #f7f9fb;
 
 }
+@media (max-width:991px){
 
+    .contenedorModal_A{
+        margin: 0 auto;
+    }
+    .fondoModal_A{
+        width: 104vw;
+        height: 104vh;
+
+    }
+    .ant-space{
+        width: auto!important;
+    }
+    .fuenteboton{
+        height: auto;
+        min-height: 50px;
+    }
+    .pregunta{
+        font-size: 1.2em;
+    }
+    .fuenteboton span{
+        color: black;
+        font-size: 1em;
+    }
+
+    
+}

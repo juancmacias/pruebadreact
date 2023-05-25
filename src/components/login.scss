@@ -263,6 +263,7 @@ a {
 
 .formulario [ type="submit"], .formulario .google {
   margin-top: 10px;
+  width: 100%;
   padding: 5px 10px;
   font-size: 1.2em;
   background-color: #fff;
@@ -276,4 +277,12 @@ a {
 .formulario [ type="submit"]:hover, .formulario .google{
 color:#fff;
 background-color: #FE51FF;
+}
+@media screen and (max-width: 768px) {
+  .formulario {
+    padding: 0px;
+  }
+  .formulario .google{
+    margin: 10px 0;
+  }
 }

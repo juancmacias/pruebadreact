@@ -1,12 +1,19 @@
-
+import {useState} from 'react';
 import valores from "../data/datos_valor.json";
 import './css/productos.css'
 
 
 function Productos() {
+  const [carrito, setCarrito] = useState([]);
+
+  const anidar = (datos) => {
+    const carro = [...carrito, datos];
+    setCarrito(carro);
+    localStorage.setItem('carro', JSON.stringify(carro));
+  };
     return (
       <main>
-        <h2>Elija un plan que se adapte a sus necesidades de participación</h2>
+        <h2>Elija tu plan</h2>
         <div class="row">
         { 
           valores.map((datos, id)=>(
@@ -18,8 +25,7 @@ function Productos() {
                 <p>{datos.op2}</p>
                 <p>{datos.op3}</p>
                 <div className='usuario'>Usuarios: {datos.invited}</div>
-
-                <button to={`/detalles/${id}`}>Seleccionar plan</button>
+                <button onClick={()=>anidar(datos)}>Seleccionar plan</button>
               </div>
             </div>
           ))
