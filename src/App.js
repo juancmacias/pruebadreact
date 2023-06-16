@@ -21,8 +21,8 @@ function App() {
 
         <Routes>
             <Route exact path='retoseguridad/' element={<Jugar />} />
-            <Route path='jugar' element={<Comenzarjuego />} />
-            <Route path='resumen' element={<Resumen />} /> 
+            <Route path='jugar/' element={<Comenzarjuego />} />
+            <Route path='resumen/' element={<Resumen />} /> 
         </Routes>
    
     </div>
