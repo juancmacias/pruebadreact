@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/pruebadreact.git/static/css/main.6626b24b.css",
-    "main.js": "/pruebadreact.git/static/js/main.b8675085.js",
+    "main.css": "/pruebadreact.git/static/css/main.6a9bcdce.css",
+    "main.js": "/pruebadreact.git/static/js/main.2e4f4ddf.js",
     "static/media/misc333.mp3": "/pruebadreact.git/static/media/misc333.ad776739a35f166538b8.mp3",
-    "static/media/fondo_main.svg": "/pruebadreact.git/static/media/fondo_main.11eb6bcf0b80cf09d67134043c6e95d4.svg",
-    "static/media/triviafly.svg": "/pruebadreact.git/static/media/triviafly.800301851361abb55517.svg",
-    "static/media/spin.svg": "/pruebadreact.git/static/media/spin.f8bff7e645c947e2c201a3328ef6824d.svg",
-    "static/media/close.svg": "/pruebadreact.git/static/media/close.ef807985a37c48c474ce2aa54059d2a5.svg",
+    "static/media/fondo_main.svg": "/pruebadreact.git/static/media/fondo_main.a1cf478d188a09017425a884e259a5dd.svg",
+    "static/media/triviafly.svg": "/pruebadreact.git/static/media/triviafly.5f532f3da33525719623.svg",
+    "static/media/spin.svg": "/pruebadreact.git/static/media/spin.efd7496c3d638827d940d2ce7596dce8.svg",
+    "static/media/close.svg": "/pruebadreact.git/static/media/close.0818087c63fcfc6cc89553480d246da4.svg",
     "index.html": "/pruebadreact.git/index.html",
-    "main.6626b24b.css.map": "/pruebadreact.git/static/css/main.6626b24b.css.map",
-    "main.b8675085.js.map": "/pruebadreact.git/static/js/main.b8675085.js.map"
+    "main.6a9bcdce.css.map": "/pruebadreact.git/static/css/main.6a9bcdce.css.map",
+    "main.2e4f4ddf.js.map": "/pruebadreact.git/static/js/main.2e4f4ddf.js.map"
   },
   "entrypoints": [
-    "static/css/main.6626b24b.css",
-    "static/js/main.b8675085.js"
+    "static/css/main.6a9bcdce.css",
+    "static/js/main.2e4f4ddf.js"
   ]
 }
