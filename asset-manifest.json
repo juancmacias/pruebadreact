@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/pruebadreact.git/static/css/main.6a9bcdce.css",
-    "main.js": "/pruebadreact.git/static/js/main.2e4f4ddf.js",
-    "static/media/misc333.mp3": "/pruebadreact.git/static/media/misc333.ad776739a35f166538b8.mp3",
-    "static/media/fondo_main.svg": "/pruebadreact.git/static/media/fondo_main.a1cf478d188a09017425a884e259a5dd.svg",
-    "static/media/triviafly.svg": "/pruebadreact.git/static/media/triviafly.5f532f3da33525719623.svg",
-    "static/media/spin.svg": "/pruebadreact.git/static/media/spin.efd7496c3d638827d940d2ce7596dce8.svg",
-    "static/media/close.svg": "/pruebadreact.git/static/media/close.0818087c63fcfc6cc89553480d246da4.svg",
-    "index.html": "/pruebadreact.git/index.html",
-    "main.6a9bcdce.css.map": "/pruebadreact.git/static/css/main.6a9bcdce.css.map",
-    "main.2e4f4ddf.js.map": "/pruebadreact.git/static/js/main.2e4f4ddf.js.map"
+    "main.css": "/pruebadreact/static/css/main.9f303261.css",
+    "main.js": "/pruebadreact/static/js/main.4d504a03.js",
+    "static/media/misc333.mp3": "/pruebadreact/static/media/misc333.ad776739a35f166538b8.mp3",
+    "static/media/fondo_main.svg": "/pruebadreact/static/media/fondo_main.a1cf478d188a09017425a884e259a5dd.svg",
+    "static/media/triviafly.svg": "/pruebadreact/static/media/triviafly.5f532f3da33525719623.svg",
+    "static/media/spin.svg": "/pruebadreact/static/media/spin.efd7496c3d638827d940d2ce7596dce8.svg",
+    "static/media/close.svg": "/pruebadreact/static/media/close.0818087c63fcfc6cc89553480d246da4.svg",
+    "index.html": "/pruebadreact/index.html",
+    "main.9f303261.css.map": "/pruebadreact/static/css/main.9f303261.css.map",
+    "main.4d504a03.js.map": "/pruebadreact/static/js/main.4d504a03.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a9bcdce.css",
-    "static/js/main.2e4f4ddf.js"
+    "static/css/main.9f303261.css",
+    "static/js/main.4d504a03.js"
   ]
 }
