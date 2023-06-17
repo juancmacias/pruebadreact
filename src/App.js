@@ -20,7 +20,7 @@ function App() {
     <div>
 
         <Routes>
-            <Route exact path='retoseguridad/' element={<Jugar />} />
+            <Route exact path='/' element={<Jugar />} />
             <Route path='jugar/' element={<Comenzarjuego />} />
             <Route path='resumen/' element={<Resumen />} /> 
         </Routes>
