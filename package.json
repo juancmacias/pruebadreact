@@ -2,6 +2,7 @@
   "name": "pruebadreact",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://juancmacias.github.io/pruebadreact/",
   "dependencies": {
     "@react-oauth/google": "^0.11.0",
     "antd": "^5.5.0",
@@ -18,7 +19,8 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b build",
+
+    "deploy": "vercel --prod",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
