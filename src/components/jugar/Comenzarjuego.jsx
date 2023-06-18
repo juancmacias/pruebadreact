@@ -131,10 +131,11 @@ function Comenzarjuego() {
       comprobar(0)
     }if (count === -4) {
       
-      window.location.pathname = './jugar/';
+      window.location.pathname = 'jugar';
+      //window.location.reload(true)
       if(resto === tiradas){
         
-        window.location.pathname = './resumen/';
+        window.location.pathname = 'resumen';
         localStorage.removeItem('tiradas');
       }
     } 
