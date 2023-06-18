@@ -1,10 +1,8 @@
 {
   "name": "pruebadreact",
   "version": "0.1.0",
-  "private": false,
-
+  "private": true,
   "homepage": "https://juancmacias.github.io/pruebadreact/",
-  
   "dependencies": {
     "@react-oauth/google": "^0.11.0",
     "antd": "^5.5.0",
@@ -16,12 +14,12 @@
     "react-custom-roulette": "^1.4.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^2.1.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b build" ,
+    "deploy": "gh-pages -b build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",

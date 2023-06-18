@@ -1,4 +1,4 @@
-
+import React from 'react';
 import MainPage from './jugar/MainPage/MainPage.jsx';
 
 function Jugar() {
