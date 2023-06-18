@@ -2,8 +2,8 @@
   "name": "pruebadreact",
   "version": "0.1.0",
   "private": false,
-  "start_url": "/pruebadreact",
-  "homepage": "https://juancmacias.github.io/",
+
+  "homepage": "https://juancmacias.github.io/pruebadreact/",
   
   "dependencies": {
     "@react-oauth/google": "^0.11.0",
